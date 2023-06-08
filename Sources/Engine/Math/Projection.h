@@ -176,7 +176,7 @@ class ENGINE_API CPerspectiveProjection3D : public CProjection3D {
 public:
 // implementation:
   // factors set by user
-  ANGLE ppr_FOVHeight;                // HEIGHT* of field-of-view
+  ANGLE ppr_FOVWidth;                // width of field-of-view
   FLOAT ppr_fMipRatio;               // for mip-factor calculation
 
   // internal variables
@@ -644,10 +644,10 @@ ENGINE_API inline const FLOAT &CProjection3D::DepthBufferFarR(void) const {
  */
 ENGINE_API inline ANGLE &CPerspectiveProjection3D::FOVL(void) {
   IFDEBUG(pr_Prepared = FALSE);    // invalidate precalculations on any non-const access
-  return ppr_FOVHeight;
+  return ppr_FOVWidth;
 }
 ENGINE_API inline const ANGLE &CPerspectiveProjection3D::FOVR(void) const {
-  return ppr_FOVHeight;
+  return ppr_FOVWidth;
 }
 
 /////////////////////////////////////////////////////////////////////
