@@ -52,6 +52,7 @@ Temp/
 *.user
 *.iobj
 *.ipdb
+*.loc
 
 # Generated configuration files
 *.plr
