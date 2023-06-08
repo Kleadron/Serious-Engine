@@ -32,6 +32,8 @@
 # CMake Build dirs (temp)
 Build/
 Debug/
+Release/
+Temp/
 
 # Visual Studio
 *.vs
@@ -47,6 +49,9 @@ Debug/
 *.hm
 *.exp
 *.res
+*.user
+*.iobj
+*.ipdb
 
 # Generated configuration files
 *.plr
