@@ -145,7 +145,7 @@ void CGame::ConsoleRender(CDrawPort *pdp)
 
   LCDPrepare(fConsoleFadeValue);
   LCDSetDrawport(&dpConsole);
-  dpConsole.Fill(LCDFadedColor(C_BLACK|225));
+  dpConsole.Fill(LCDFadedColor(C_BLACK|255)); // 225
 
   PIX pixSizeI = dpConsole.GetWidth();
   PIX pixSizeJ = dpConsole.GetHeight();
@@ -156,7 +156,7 @@ void CGame::ConsoleRender(CDrawPort *pdp)
   PIX pixLineSpacing = _pfdConsoleFont->fd_pixCharHeight + _pfdConsoleFont->fd_pixLineSpacing;
 
   LCDRenderCloudsForComp();
-  //LCDRenderGrid();
+  LCDRenderGrid();
   LCDRenderClouds2();
   dpConsole.DrawLine( 0, pixSizeJ-1, pixSizeI, pixSizeJ-1, LCDFadedColor(SE_COL_BLUE_NEUTRAL|255));
   const COLOR colFill = (colDark & ~CT_AMASK) | 0x2F;
