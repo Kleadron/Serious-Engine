@@ -19,7 +19,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 extern CGame *_pGame;
 
 // console variables
-static const FLOAT tmConsoleFade   = 0.5f;  // how many seconds it takes console to fade in/out
+static const FLOAT tmConsoleFade   = 0.0f;  // how many seconds it takes console to fade in/out
 static FLOAT fConsoleFadeValue     = 0.0f;  // faded value of console (0..1)
 static CTimerValue tvConsoleLast;
 
