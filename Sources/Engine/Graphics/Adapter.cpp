@@ -37,33 +37,16 @@ public:
 
 static CResolution _areResolutions[] =
 {
-  {  320,  240 },
-  {  400,  300 },
-  {  480,  360 },
-  {  512,  384 },
-  {  640,  480 },
-  {  720,  540 },
-  {  720,  576 },
-  {  800,  600 },
-  {  960,  720 },
-  { 1024,  768 },
-  { 1152,  864 },
-  { 1280,  960 },
-  { 1280, 1024 },
-  { 1600, 1200 },
-  { 1792, 1344 },
-  { 1856, 1392 },
-  { 1920, 1440 },
-  { 2048, 1536 },
-
-  // matrox dualhead modes
-  { 1280,  480 },
-  { 1600,  600 },
-  { 2048,  768 },
-
-  // NTSC HDTV widescreen
-  {  848,  480 },
-  {  856,  480 },
+	{ 640, 480 },
+	{ 800, 600 },
+	{ 1024, 768 },
+	{ 1280, 720 },
+	{ 1280, 960 },
+	{ 1600, 900 },
+	{ 1600, 1200 },
+	{ 1920, 1080 },
+	{ 1920, 1440 },
+	{ 2048, 1536 }
 };
 // THIS NUMBER MUST NOT BE OVER 25! (otherwise change it in adapter.h)
 static const INDEX MAX_RESOLUTIONS = sizeof(_areResolutions)/sizeof(_areResolutions[0]);
