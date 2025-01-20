@@ -242,6 +242,8 @@ CTimer::CTimer(BOOL bInterrupt /*=TRUE*/)
   _CurrentTickTimer = TIME(0);
   tm_RealTimeTimer = TIME(0);
 
+  tm_llBaseTime = GetHighPrecisionTimerActual();
+
   tm_tmLastTickOnTime = TIME(0);
   tm_tvLastTimeOnTime = GetHighPrecisionTimer();
   // disable lerping by default

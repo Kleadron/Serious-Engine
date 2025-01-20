@@ -75,6 +75,8 @@ public:
   __int64 tm_llPerformanceCounterFrequency; // frequency of Win32 performance counter
   __int64 tm_llCPUSpeedHZ;  // CPU speed in HZ
 
+  __int64 tm_llBaseTime; // the time at which the timer started
+
   CTimerValue tm_tvLastTimeOnTime;  // last time when timer was on time
   TIME        tm_tmLastTickOnTime;  // last tick when timer was on time
 
@@ -131,12 +133,21 @@ public:
   inline FLOAT GetLerpFactor2(void) const { return tm_fLerpFactor2; };
 
   /* Get current timer value of high precision timer. */
-  inline CTimerValue GetHighPrecisionTimer(void) {
+  inline __int64 GetHighPrecisionTimerActual(void) {
    __int64 mmRet;
     _asm rdtsc
     _asm mov dword ptr [mmRet+0],eax
     _asm mov dword ptr [mmRet+4],edx
     return mmRet;
+  };
+
+  /* Get current timer value of high precision timer. */
+  inline CTimerValue GetHighPrecisionTimer(void) {
+	  if (this == NULL)
+		  return CTimerValue((__int64)0);
+
+	  __int64 actual = GetHighPrecisionTimerActual();
+	  return CTimerValue(actual - tm_llBaseTime);
   };
 };
 
