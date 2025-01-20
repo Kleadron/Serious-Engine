@@ -133,8 +133,10 @@ void CPerspectiveProjection3D::Prepare(void)
     pr_ScreenCenter = pr_ScreenBBox.Center();
     /* calculate FOVHeight from FOVWidth by formula:
        halfanglej = atan( tan(halfanglei)*jsize*aspect/isize ) */
-    ANGLE aHalfI = ppr_FOVWidth/2;
-    ANGLE aHalfJ = ATan(TanFast(aHalfI)*v2dScreenSize(2)*pr_AspectRatio/v2dScreenSize(1));
+    //ANGLE aHalfI = ppr_FOVWidth/2;
+    //ANGLE aHalfJ = ATan(TanFast(aHalfI)*v2dScreenSize(2)*pr_AspectRatio/v2dScreenSize(1));
+	ANGLE aHalfJ = ppr_FOVHeight/2;
+	ANGLE aHalfI = ATan(TanFast(aHalfJ)*v2dScreenSize(1)*pr_AspectRatio/v2dScreenSize(2));
 
     /* calc. perspective ratios by formulae:
        xratio = isize/(2*tan(anglei/2))
@@ -153,8 +155,10 @@ void CPerspectiveProjection3D::Prepare(void)
     pr_ScreenCenter = pr_ScreenBBox.Center();
     /* calculate FOVHeight from FOVWidth by formula:
        halfanglej = atan( tan(halfanglei)*jsize*aspect/isize ) */
-    ANGLE aHalfI = ppr_FOVWidth/2;
-    ANGLE aHalfJ = ATan(TanFast(aHalfI)*v2dScreenSize(2)*pr_AspectRatio/v2dScreenSize(1));
+    //ANGLE aHalfI = ppr_FOVWidth/2;
+    //ANGLE aHalfJ = ATan(TanFast(aHalfI)*v2dScreenSize(2)*pr_AspectRatio/v2dScreenSize(1));
+	ANGLE aHalfJ = ppr_FOVHeight / 2;
+	ANGLE aHalfI = ATan(TanFast(aHalfJ)*v2dScreenSize(1)*pr_AspectRatio / v2dScreenSize(2));
 
     /* calc. perspective ratios by formulae:
        xratio = isize/(2*tan(anglei/2))
@@ -590,5 +594,5 @@ FLOAT CPerspectiveProjection3D::MipFactor(void) const
   ASSERT(pr_Prepared);
   // calculated using following formula: k = log2(1024*z/xratio);
   // the distance is, in fact, the z coordinate of the translation vector
-  return -pr_TranslationVector(3)*TanFast(ppr_FOVWidth/2.0f); // /Tan(90.0f/2.0f)=1;
+  return -pr_TranslationVector(3)*TanFast(ppr_FOVHeight/2.0f); // /Tan(90.0f/2.0f)=1;
 }
