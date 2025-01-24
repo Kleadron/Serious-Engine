@@ -812,6 +812,7 @@ yyparse(YYPARSE_PARAM)
   yyerrstatus = 0;
   yynerrs = 0;
   yychar = YYEMPTY;		/* Cause a token to be read.  */
+  yyval = { }; // fix dumbass runtime warning
 
   /* Initialize stack pointers.
      Waste one element of value and location stack
