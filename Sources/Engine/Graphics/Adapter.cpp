@@ -37,6 +37,7 @@ public:
 
 static CResolution _areResolutions[] =
 {
+	{ 320, 240 },
 	{ 640, 480 },
 	{ 800, 600 },
 	{ 1024, 768 },

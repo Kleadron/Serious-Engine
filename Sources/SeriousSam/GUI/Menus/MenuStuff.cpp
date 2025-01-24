@@ -38,6 +38,7 @@ extern CTString astrWeapon[] = {
 };
 
 extern PIX apixWidths[][2] = {
+  320, 240,
   640, 480,
   800, 600,
   1024, 768,
