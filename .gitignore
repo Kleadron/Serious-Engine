@@ -92,6 +92,12 @@ Sources/SeriousSkaStudio/Parser.h
 Sources/SeriousSkaStudio/Scanner.cpp
 
 
+Bin/
+Models/
+Music/
+Scripts/
+Textures/
+Levels/
 
 
 
