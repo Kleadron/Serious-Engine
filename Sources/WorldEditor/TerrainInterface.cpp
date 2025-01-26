@@ -1975,12 +1975,16 @@ void InvokeTerrainBrushPalette( PIX pixX, PIX pixY)
       NULL, L"Brush palette", WS_CHILD|WS_POPUP|WS_VISIBLE,
       rectWindow.left, rectWindow.top, rectWindow.Width(), rectWindow.Height(),
       pMainFrame->m_hWnd, NULL, NULL);
-    _pBrushPalette->SetFocus();
+
     if( !bResult)
     {
       AfxMessageBox( L"Error: Failed to create brush palette");
+	  delete _pBrushPalette;
+	  _pBrushPalette = NULL;
       return;
     }
+
+	_pBrushPalette->SetFocus();
     // initialize canvas for active texture button
     _pGfx->CreateWindowCanvas( _pBrushPalette->m_hWnd, &_pBrushPalette->m_pViewPort,
                                &_pBrushPalette->m_pDrawPort);
